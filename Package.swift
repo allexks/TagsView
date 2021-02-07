@@ -5,19 +5,28 @@ import PackageDescription
 
 let package = Package(
     name: "TagsView",
+    platforms: [
+        .macOS(.v10_15),
+        .iOS(.v13),
+        .tvOS(.v13),
+        .watchOS(.v6),
+    ],
     products: [
         .library(
             name: "TagsView",
-            targets: ["TagsView"]),
+            targets: ["TagsView"]
+        ),
     ],
     dependencies: [
     ],
     targets: [
         .target(
             name: "TagsView",
-            dependencies: []),
+            dependencies: []
+        ),
         .testTarget(
             name: "TagsViewTests",
-            dependencies: ["TagsView"]),
+            dependencies: ["TagsView"]
+        ),
     ]
 )

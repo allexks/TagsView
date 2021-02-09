@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-public struct TagsView<DataSource: Collection, Content: View>: View where DataSource.Element: Hashable {
+public struct TagsView<DataSource: Collection, Content: View>: View {
     public let dataSource: DataSource
     @State public var spacing: CGFloat = 8
     @State public var alignment: HorizontalAlignment = .leading
@@ -26,11 +26,17 @@ public struct TagsView<DataSource: Collection, Content: View>: View where DataSo
             
             TagsRenderView(
                 availableWidth: availableWidth,
-                dataSource: dataSource,
+                dataSource: hashableDataSource,
                 spacing: spacing,
                 alignment: alignment,
                 content: content
             )
+        }
+    }
+    
+    private var hashableDataSource: [HashableWrapper<DataSource.Element>] {
+        dataSource.enumerated().map {
+            .init(id: $0, data: $1)
         }
     }
 }

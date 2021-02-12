@@ -2,6 +2,7 @@
 
 ![Build and Test](https://github.com/allexks/TagsView/workflows/Build%20and%20Test/badge.svg)
 ![SPM Supported](https://img.shields.io/badge/Swift%20Package%20Manager-Supported-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 
 SwiftUI component.
